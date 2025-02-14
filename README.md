@@ -1,59 +1,78 @@
-Network Scanner with MAC Vendor Lookup
-This Python-based Network Scanner uses ARP (Address Resolution Protocol) to scan a specified IP range and retrieve the IP addresses, MAC addresses, and their corresponding device manufacturers (vendors). It also allows exporting the results to a CSV file for future reference.
+# Network Scanner with MAC Vendor Lookup
 
-🛠 Features
-Scans an IP range for connected devices.
-Displays IP addresses, MAC addresses, and vendor information.
-Appends scan results to a CSV file.
-Automatically updates the MAC vendor list.
-Compatible with both Linux and Windows.
+This Python-based **Network Scanner** scans a specified IP range to retrieve the IP addresses, MAC addresses, and vendor information. It can also export the results to a CSV file.
 
-📋 Prerequisites
-Ensure you have the following installed:
+---
 
-Python 3.6 or later
-Scapy (for network packet handling)
-mac-vendor-lookup (for MAC address to vendor mapping)
-Installing required packages:
+## 🔧 Features
+- Scans for connected devices in a given IP range.
+- Displays IP addresses, MAC addresses, and vendor details.
+- Exports scan results to a CSV file.
+- Automatically updates the MAC vendor list.
+- Works on both **Linux** and **Windows**.
 
-Run the following command to install all dependencies:
+---
 
+## 📋 Prerequisites
+Make sure you have:
+- **Python 3.6 or later**
+- **Scapy** (for packet handling)
+- **mac-vendor-lookup** (for vendor identification)
+
+### Install Packages:
+```bash
 pip install scapy mac-vendor-lookup
-For Windows users, ensure you have Npcap installed. Download and install it from the official Npcap website.
+```
 
-🚀 Usage
-Clone the repository or save the script to your local machine.
+For **Windows**, install **Npcap** from [Npcap website](https://npcap.com/).
 
-Run the script using the following command:
+---
 
+## 🚀 Usage
+Run the script using:
+```bash
 python network_scn.py -i <IP Range> -c <CSV Filename>
+```
 
-Example:
+### Example:
+```bash
 python network_scn.py -i 192.168.1.1/24 -c results.csv
-Command Options:
--i, --ip-range (Required): The IP range to scan (e.g., 192.168.1.1/24).
--c, --csv (Optional): The name of the CSV file to save the scan results (default: default_scan_results.csv).
-Sample Output:
-mathematica
-Copy
-Edit
+```
+
+### Options:
+- `-i, --ip-range` (Required): IP range to scan (e.g., `192.168.1.1/24`).
+- `-c, --csv` (Optional): Name of the CSV file (default: `default_scan_results.csv`).
+
+### Sample Output:
+```
 IP Address               MAC                Vendors
 ----------------------------------------------------------
 192.168.1.1              00:1A:2B:3C:4D:5E  Cisco Systems
 192.168.1.10             02:3B:4C:5D:6E:7F  Unknown
-📦 How It Works
-ARP Request: The script sends ARP requests to devices in the specified IP range.
-Packet Capture: Scapy captures the responses and extracts IP and MAC addresses.
-Vendor Lookup: The MAC addresses are checked against a vendor database to identify the device manufacturer.
-Data Export: The results are optionally saved to a CSV file.
-🔍 Common Issues and Solutions
-No libpcap provider available (Windows): Ensure that Npcap is installed on your system.
-Empty Scan Results: Make sure your network adapter is properly configured and that the target devices are on the same subnet.
-📜 License
-This project is open-source and available under the MIT License.
+```
 
-🙌 Acknowledgments
-Special thanks to:
+---
 
-Scapy for packet manipulation.
-mac-vendor-lookup for vendor identification.
+## 📦 How It Works
+1. Sends ARP requests to devices in the IP range.
+2. Captures responses to get IP and MAC addresses.
+3. Matches MAC addresses to vendor info.
+4. Exports results to a CSV file if specified.
+
+---
+
+## 🔍 Common Issues
+- **No libpcap provider:** Ensure Npcap is installed on Windows.
+- **Empty results:** Make sure your network adapter is properly configured.
+
+---
+
+## 📜 License
+This project is open-source under the MIT License.
+
+---
+
+## 🙌 Acknowledgments
+Thanks to:
+- [Scapy](https://scapy.net/)
+- [mac-vendor-lookup](https://pypi.org/project/mac-vendor-lookup/)
