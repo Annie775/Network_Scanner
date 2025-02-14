@@ -1,4 +1,4 @@
-# Network Scanner with MAC Vendor Lookup
+# Network Scanner 
 
 This Python-based **Network Scanner** scans a specified IP range to retrieve the IP addresses, MAC addresses, and vendor information. It can also export the results to a CSV file.
 
