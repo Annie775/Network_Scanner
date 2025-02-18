@@ -67,11 +67,6 @@ IP Address               MAC                Vendors
 
 ---
 
-## 📜 License
-This project is open-source under the MIT License.
-
----
-
 ## 🙌 Acknowledgments
 Thanks to:
 - [Scapy](https://scapy.net/)
